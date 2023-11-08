@@ -8,9 +8,12 @@ Regardless, this is the guide to doing that. Hopefully it will be of help.
 
 ## Prerequisites
 
-First of all, you should have the Unity project cloned on your computer from the GitHub repository. You probably should have learned this in GP class, but if you didn't, [I don't blame you](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop).
+First of all, the dialogue system uses ink <i>(not the liquidy kind)</i>, so you should probably have the [Inky](https://github.com/inkle/inky/releases/tag/0.14.1) editor downloaded.
 
-Next, the dialogue system uses ink <i>(not the liquidy kind)</i>, so you should probably have the [Inky](https://github.com/inkle/inky/releases/tag/0.14.1) editor downloaded.
+Next, if you want to see what the dialogue looks like in-game, you should have the Unity project cloned on your computer from the GitHub repository. You probably should have learned this in GP class, but if you didn't, [I don't blame you](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop). 
+
+You can also see a basic preview of the dialogue on the Inky editor so having the Unity project is technically not a requirement.
+
 
 ## Basic dialogue and choices
 
