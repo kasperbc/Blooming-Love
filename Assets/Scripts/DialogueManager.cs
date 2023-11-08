@@ -31,11 +31,13 @@ public class DialogueManager : MonoBehaviour
     // Refrences
     private GameObject canvas;
     private DialogueTextWriter dialogueText;
+    private TextMeshProUGUI speakerText;
     void Start()
     {
         // Find refrences
         canvas = GameObject.Find("Canvas");
         dialogueText = GameObject.Find("DialogueText").GetComponent<DialogueTextWriter>();
+        speakerText = GameObject.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
 
         // Choice refrences
         Transform dialogueChoicesParent = GameObject.Find("DialogueChoices").transform;
@@ -150,9 +152,13 @@ public class DialogueManager : MonoBehaviour
                     break;
                 // Change background
                 case "background":
-                case "bg":
                 case "b":
                     GameManager.Instance.SetBackground(tagSplit[1]);
+                    break;
+                // Change speaker
+                case "speaker":
+                case "p":
+                    speakerText.text = tagSplit[1];
                     break;
             }
         }

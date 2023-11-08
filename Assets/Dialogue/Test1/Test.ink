@@ -1,6 +1,7 @@
-This is a test!!!!!!!!!!!!!!!!!
+This is a test!!!!!!!!!!!!!!!!! # speaker Placeholder-chan
 This is a test dialogue. This dialogue will pause for a second after the period.
-Hellooooo!!!!!
+I am thinking right now # speaker You
+Hellooooo!!!!! # speaker Placeholder-chan
 Hiiii!!!!!!
 
 * [Choose this one!]
