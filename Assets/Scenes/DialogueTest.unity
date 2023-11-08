@@ -352,8 +352,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1081669543}
   - component: {fileID: 1081669542}
+  - component: {fileID: 1081669544}
   m_Layer: 0
-  m_Name: DialogueManager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,6 +388,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081669544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081669541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377762cc9cf9c444095294f269de19b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - name: happy
+    sprite: {fileID: 21300000, guid: 9eee9f23c7674e3448ac2e6b2822c88b, type: 3}
+  - name: sad
+    sprite: {fileID: 21300000, guid: bbfe25921660de148be79e8318fa1008, type: 3}
+  backgrounds:
+  - name: grass
+    sprite: {fileID: 21300000, guid: f917ca68b53ffdd4699fdb7bac7a1834, type: 3}
+  - name: space
+    sprite: {fileID: 21300000, guid: 73cb823b8d1db054aa2b4428c7972d0f, type: 3}
 --- !u!1 &1785549351
 GameObject:
   m_ObjectHideFlags: 0

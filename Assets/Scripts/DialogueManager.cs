@@ -5,7 +5,6 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using Unity.Mathematics;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -68,6 +67,11 @@ public class DialogueManager : MonoBehaviour
                 DisplayChoices();
                 currentState = GameState.Choice;
             }
+
+            if (story.currentTags.Count > 0)
+            {
+                HandleTags();
+            }
         }
         else
         {
@@ -105,6 +109,35 @@ public class DialogueManager : MonoBehaviour
             choice.SetActive(false); 
         }
     }
+    void HandleTags()
+    {
+        foreach (string tag in story.currentTags)
+        {
+            string[] tagSplit = tag.Split(' ');
+
+            switch (tagSplit[0].ToLower())
+            {
+                // Like / Dislike
+                case "like":
+                    GameManager.Instance.HeartPoints++;
+                    break;
+                case "dislike":
+                    GameManager.Instance.HeartPoints--;
+                    break;
+                // Change sprite
+                case "sprite":
+                case "s":
+                    GameManager.Instance.SetCharacterSprite(tagSplit[1]);
+                    break;
+                // Change background
+                case "background":
+                case "bg":
+                case "b":
+                    GameManager.Instance.SetBackground(tagSplit[1]);
+                    break;
+            }
+        }
+    }
 
     public void MakeChoice(int choiceIndex)
     {
@@ -115,4 +148,5 @@ public class DialogueManager : MonoBehaviour
         HideChoices();
         ContinueStory();
     }
+
 }

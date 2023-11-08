@@ -3,10 +3,10 @@ Hellooooo!!!!!
 Hiiii!!!!!!
 
 * [Choose this one!]
-    Yippee!!!!
+    Yippee!!!! # like
 * [Do not choose this one!!! (I will be sad)]
-    Yay!!!!!
+    noooo :((( # sprite sad # dislike
 * [go to the moon]
-    oaky
+    yippeee!!! # background space
     
-Rejoice! The test continues!!
+- wooooo!!!!!!!
