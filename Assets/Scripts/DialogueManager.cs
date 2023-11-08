@@ -25,12 +25,12 @@ public class DialogueManager : MonoBehaviour
 
     // Refrences
     private GameObject canvas;
-    private TextMeshProUGUI dialogueText;
+    private DialogueTextWriter dialogueText;
     void Start()
     {
         // Find refrences
         canvas = GameObject.Find("Canvas");
-        dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
+        dialogueText = GameObject.Find("DialogueText").GetComponent<DialogueTextWriter>();
 
         // Choice refrences
         Transform dialogueChoicesParent = GameObject.Find("DialogueChoices").transform;
@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
         story = new Story(inkJson.text);
 
         HideChoices();
+        ContinueStory();
     }
 
     void Update()
@@ -60,7 +61,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (story.canContinue)
         {
-            dialogueText.text = story.Continue();
+            dialogueText.WriteDialogue(story.Continue());
 
             if (story.currentChoices.Count > 0)
             {
@@ -75,7 +76,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            dialogueText.text = "<i>End of story";
+            dialogueText.WriteDialogue("<i>End of story");
             print("No more story :(");
         }
     }

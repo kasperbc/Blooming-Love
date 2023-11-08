@@ -1,4 +1,5 @@
 This is a test!!!!!!!!!!!!!!!!!
+This is a test dialogue. This dialogue will pause for a second after the period.
 Hellooooo!!!!!
 Hiiii!!!!!!
 

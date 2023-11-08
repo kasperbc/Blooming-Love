@@ -502,6 +502,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1686982857858237703, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
+      propertyPath: writeSpeed
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 3306529810140964510, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
