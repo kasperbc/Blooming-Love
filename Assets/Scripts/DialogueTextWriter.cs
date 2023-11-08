@@ -11,7 +11,9 @@ public class DialogueTextWriter : MonoBehaviour
     private bool writing;
     private float lastWrite;
 
+    // Refrences
     private TextMeshProUGUI textRef;
+    private DialogueManager dialogueManager;
 
     [Tooltip("How many seconds per letter")]
     public float writeSpeed;
@@ -19,6 +21,7 @@ public class DialogueTextWriter : MonoBehaviour
     private void Start()
     {
         textRef = GetComponent<TextMeshProUGUI>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     private void Update()
@@ -59,11 +62,17 @@ public class DialogueTextWriter : MonoBehaviour
 
         if (currentLetterIndex >= currentDialogue.Length)
         {
-            writing = false;
+            FinishWriting();
             return;
         }
 
         lastWrite = Time.time + extraTime;
+    }
+
+    private void FinishWriting()
+    {
+        writing = false;
+        dialogueManager.CurrentState = DialogueManager.GameState.Normal;
     }
 
     public void WriteDialogue(string dialogue)
@@ -75,5 +84,13 @@ public class DialogueTextWriter : MonoBehaviour
 
         textRef.text = string.Empty;
         lastWrite = Time.time;
+
+        dialogueManager.CurrentState = DialogueManager.GameState.Writing;
+    }
+
+    public void JumpDialogue()
+    {
+        textRef.text = currentDialogue.ArrayToString();
+        FinishWriting();
     }
 }

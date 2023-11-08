@@ -19,9 +19,14 @@ public class DialogueManager : MonoBehaviour
     public enum GameState
     {
         Normal,
-        Choice
+        Writing
     }
     private GameState currentState;
+    public GameState CurrentState
+    {
+        get { return currentState; }
+        set { currentState = value; }
+    }
 
     // Refrences
     private GameObject canvas;
@@ -51,14 +56,28 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentState == GameState.Normal)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            ContinueStory();
+            switch (currentState)
+            {
+                case GameState.Normal:
+                    ContinueStory();
+                    break;
+                case GameState.Writing:
+                    dialogueText.JumpDialogue();
+                    break;
+            }
+                
         }
     }
 
     void ContinueStory()
     {
+        if (story.currentChoices.Count > 0)
+        {
+            return;
+        }
+
         if (story.canContinue)
         {
             dialogueText.WriteDialogue(story.Continue());
@@ -66,7 +85,6 @@ public class DialogueManager : MonoBehaviour
             if (story.currentChoices.Count > 0)
             {
                 DisplayChoices();
-                currentState = GameState.Choice;
             }
 
             if (story.currentTags.Count > 0)
@@ -143,8 +161,6 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         story.ChooseChoiceIndex(choiceIndex);
-
-        currentState = GameState.Normal;
 
         HideChoices();
         ContinueStory();
