@@ -5,6 +5,7 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -104,7 +105,7 @@ public class DialogueManager : MonoBehaviour
     void DisplayChoices()
     {
         List<Choice> currentChoices = story.currentChoices;
-
+        
         if (currentChoices.Count > choices.Count)
         {
             Debug.LogError("Too many choices!");
@@ -159,6 +160,10 @@ public class DialogueManager : MonoBehaviour
                 case "speaker":
                 case "p":
                     speakerText.text = tagSplit[1];
+                    break;
+                // Load scene
+                case "loadscene":
+                    SceneManager.LoadScene(tagSplit[1]);
                     break;
             }
         }
