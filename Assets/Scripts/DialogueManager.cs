@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using JSAM;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -33,12 +34,14 @@ public class DialogueManager : MonoBehaviour
     private GameObject canvas;
     private DialogueTextWriter dialogueText;
     private TextMeshProUGUI speakerText;
+    private MusicPlayer musicPlayer;
     void Start()
     {
         // Find refrences
         canvas = GameObject.Find("Canvas");
         dialogueText = GameObject.Find("DialogueText").GetComponent<DialogueTextWriter>();
         speakerText = GameObject.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
+        musicPlayer = FindObjectOfType<MusicPlayer>();
 
         // Choice refrences
         Transform dialogueChoicesParent = GameObject.Find("DialogueChoices").transform;
@@ -159,11 +162,14 @@ public class DialogueManager : MonoBehaviour
                 // Change speaker
                 case "speaker":
                 case "p":
-                    speakerText.text = tagSplit[1];
+                    speakerText.text = tagSplit[1].Replace('_', ' ');
                     break;
                 // Load scene
                 case "loadscene":
                     SceneManager.LoadScene(tagSplit[1]);
+                    break;
+                case "playmusic":
+                    musicPlayer.Play();
                     break;
             }
         }

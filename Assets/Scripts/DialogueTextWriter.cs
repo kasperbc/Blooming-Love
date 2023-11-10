@@ -49,7 +49,8 @@ public class DialogueTextWriter : MonoBehaviour
         {
             newText += currentDialogue[i];
             
-            if ((currentDialogue[i] == '.' || currentDialogue[i] == '!' || currentDialogue[i] == '?') && 
+            if ((currentDialogue[i] == '.' || currentDialogue[i] == '!' || currentDialogue[i] == '?' 
+                || currentDialogue[i] == ',' || currentDialogue[i] == ':' || currentDialogue[i] == ';') && 
                 i < currentDialogue.Length - 1 &&
                 currentDialogue[i + 1] == ' ')
             {

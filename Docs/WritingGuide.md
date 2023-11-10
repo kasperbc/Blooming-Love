@@ -92,6 +92,18 @@ Alternately, using just `p` will work.
 Example:
 ![Alt text](example_9.png)
 
+### Load scene
+
+If you need to load another scene mid-scene, you can use the `loadscene` tag, followed by the scene name.
+
+Example:
+
+`# loadscene MainMenu`
+
+### Playing music
+
+By default, the music will not be played automatically when starting the scene. You can use the `playmusic` tag to start playing the scene music.
+
 Okayyyy that should be about everything for now. If more custom stuff gets implemented I'll update this if I remember to. I'll leave a fancy table at the bottom here for refrence.
 
 ## Fancy custom tags table
@@ -103,3 +115,4 @@ Okayyyy that should be about everything for now. If more custom stuff gets imple
 | `# sprite [sprite name]` or `# s [sprite name]`  | Change the sprite  |
 | `# background [bg name]` or `# b [bg name]`  | Change the background  |
 | `# speaker [name]`  | Change the "speaker"  |
+| `# playmusic`  | Play the scene music  |

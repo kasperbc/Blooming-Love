@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b4a1a425f67ae4f9a4dbadef8d4bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJson: {fileID: 4900000, guid: 4e62bb28f3a8e384e84401e49f65f110, type: 3}
+  inkJson: {fileID: 4900000, guid: 7c4b2aef0906b764db767f6616cd82fd, type: 3}
 --- !u!4 &1081669543
 Transform:
   m_ObjectHideFlags: 0
@@ -401,15 +401,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - name: happy
-    sprite: {fileID: 21300000, guid: 9eee9f23c7674e3448ac2e6b2822c88b, type: 3}
-  - name: sad
-    sprite: {fileID: 21300000, guid: bbfe25921660de148be79e8318fa1008, type: 3}
+  - name: hidden
+    sprite: {fileID: 21300000, guid: acacc4b80c5c7b04bb78f51a225ac89e, type: 3}
+  - name: neutral
+    sprite: {fileID: 21300000, guid: fa9cd092953829d40bde60d664a6f813, type: 3}
   backgrounds:
-  - name: grass
-    sprite: {fileID: 21300000, guid: f917ca68b53ffdd4699fdb7bac7a1834, type: 3}
-  - name: space
-    sprite: {fileID: 21300000, guid: 73cb823b8d1db054aa2b4428c7972d0f, type: 3}
+  - name: park
+    sprite: {fileID: 21300000, guid: 0fe5c12338dbf9a41adb11065e005e56, type: 3}
 --- !u!1 &1480445867
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd13adbb36a3a614fafbec256720d4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 8f831700cc959a84192eaaf05fb3388d, type: 2}
+  audio: {fileID: 11400000, guid: a7208f61f77bd904b925e4080164ac92, type: 2}
   advancedMode: 0
   keepPlaybackPosition: 1
   restartOnReplay: 0
@@ -587,6 +585,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 439987965041950612, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa9cd092953829d40bde60d664a6f813, type: 3}
     - target: {fileID: 995490268511361234, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -603,6 +605,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1814497395900217382, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 651
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814497395900217382, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 697
+      objectReference: {fileID: 0}
     - target: {fileID: 3306529810140964510, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -619,6 +629,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3453201505221621616, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fe5c12338dbf9a41adb11065e005e56, type: 3}
     - target: {fileID: 3541235515157346738, guid: 075d6a4977a35304e99aeb3f22861bba, type: 3}
       propertyPath: m_IsActive
       value: 1
