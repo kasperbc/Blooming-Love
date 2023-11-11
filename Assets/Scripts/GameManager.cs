@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     [Header("Backgrounds"), SerializeField]
     private List<SpriteNamePair> backgrounds = new List<SpriteNamePair>();
     private Dictionary<string, Sprite> backgroundDict = new Dictionary<string, Sprite>();
+
+    [Header("Location"), SerializeField]
+    private string locationName;
 
     // Refrences
     private Image characterImg;
@@ -78,6 +82,25 @@ public class GameManager : MonoBehaviour
         }
 
         backgroundImg.sprite = result;
+    }
+
+    private string sName;
+    public void LoadScene(string sceneName)
+    {
+        UIFade fader = FindObjectOfType<UIFade>();
+        if (fader != null)
+        {
+            fader.FadeIn();
+        }
+        GameData.OnLocationVisited(locationName);
+
+        sName = sceneName;
+        Invoke(nameof(LoadSceneAfterWait), 1);
+    }
+
+    private void LoadSceneAfterWait()
+    {
+        SceneManager.LoadScene(sName);
     }
 
     [Serializable]

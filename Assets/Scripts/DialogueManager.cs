@@ -17,6 +17,9 @@ public class DialogueManager : MonoBehaviour
     private List<GameObject> choices = new List<GameObject>();
     private List<TextMeshProUGUI> choiceTexts = new List<TextMeshProUGUI>();
 
+    [SerializeField, Header("End of story")]
+    private UnityEvent endOfStoryBehaviour;
+
     // State
     public enum GameState
     {
@@ -100,8 +103,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            dialogueText.WriteDialogue("<i>End of story");
-            print("No more story :(");
+            endOfStoryBehaviour.Invoke();
         }
     }
 

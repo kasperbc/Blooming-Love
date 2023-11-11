@@ -25,13 +25,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 50d0d91d9ef12a34d91981fd6b7e077c, type: 2}
   - {fileID: 11400000, guid: 36bb7433356ef904a8d3b2bb3fe76578, type: 2}
   useCustomNames: 0
-  generatedName: AudioLibrary
+  generatedName: GameplayLibrary
   musicEnum: AudioLibraryMusic
-  musicEnumGenerated: AudioLibraryMusic
+  musicEnumGenerated: GameplayLibraryMusic
   musicNamespace: 
   musicNamespaceGenerated: 
   soundEnum: AudioLibrarySounds
-  soundEnumGenerated: AudioLibrarySounds
+  soundEnumGenerated: GameplayLibrarySounds
   soundNamespace: 
   soundNamespaceGenerated: 
   soundCategoriesToList:
