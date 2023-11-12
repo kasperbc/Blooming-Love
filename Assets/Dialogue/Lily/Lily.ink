@@ -1,5 +1,5 @@
 As you approach the small cafe beneath large spruce trees, a pleasant aroma of freshly ground coffee beans and a sweet herbal scent surrounds the air. 
-The cafe entrance is marked by a natural arch woven with fragrant blossoms and a painted sign: “Café Flora”.
+The cafe entrance is marked by a natural arch woven with fragrant blossoms and a painted sign: “Café Flora”. # minigame
 The tables are made of polished tree stumps, adorned with delicate, hand-painted wildflowers. Toadstools and mushrooms of various sizes serve as chairs, providing cozy seating for pollinators and flower people alike.
 As you reach the counter, you’re greeted with a busy bee, hurrying with orders.
 “What can I get you?” # speaker The_bee-rista
@@ -10,7 +10,7 @@ As you reach the counter, you’re greeted with a busy bee, hurrying with orders
     
 - Before you can even glance around for a free table, the barista bee hands you your drink. # speaker _
 Careful not to spill, you find the nearest seat and place the drink on the log table.
-You suddenly notice the table wasn’t vacant after all: a pair of worrisome eyes glances at you. # sprite neutral # playmusic
+You suddenly notice the table wasn’t vacant after all: a pair of worrisome eyes glances at you. # sprite neutral # playmusic # background cafe_blur
 
 + [I’m so sorry, I didn’t notice you! Should I move?]
 + [I’ll sit here, if you don’t mind!]

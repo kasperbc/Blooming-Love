@@ -3,7 +3,7 @@ The sun is shining brightly overhead, casting a warm glow on the lush greenery a
 Near the heart of the park, a makeshift basketball hoop has been set up and a cheerful tune plays from the portable speaker on the grass.
 As you walk closer towards the sounds, you notice a flowerkin with contagious smile energetically tossing basketball in the hoop - effortlessly combining athleticism with a sunny and relaxing attitude.
 After a couple of successful shots the sunny flowerkin, reminiscent of a sunflower, turns towards you and walks forward with easy, confident strides while giving you a dashing smile.
-What’s up, sunshine? Ready to join the fun? # speaker ? # sprite neutral # playmusic
+What’s up, sunshine? Ready to join the fun? # speaker ? # sprite neutral # playmusic # background park_blur
 
 + [Absolutely, I’m up for a game. What are we playing?]
 + [I was actually just admiring you(r skills), do you mind if I join you?]

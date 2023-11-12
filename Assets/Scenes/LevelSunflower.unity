@@ -123,6 +123,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &308428961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6846765700056457061, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fe5c12338dbf9a41adb11065e005e56, type: 3}
+    - target: {fileID: 6962620434615712657, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_Name
+      value: SCENE OBJECTS
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493073604485828248, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa9cd092953829d40bde60d664a6f813, type: 3}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +362,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000000bfcdaa3832ee75e51a3eb15fbf84f7f
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -423,7 +488,9 @@ MonoBehaviour:
   backgrounds:
   - name: park
     sprite: {fileID: 21300000, guid: 0fe5c12338dbf9a41adb11065e005e56, type: 3}
-  locationName: Path
+  - name: park_blur
+    sprite: {fileID: 21300000, guid: 180d0043324aabe47bc33732b4b2669d, type: 3}
+  locationName: Park
 --- !u!1 &1480445867
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,3 +860,4 @@ SceneRoots:
   - {fileID: 1785549354}
   - {fileID: 1480445869}
   - {fileID: 1808880886}
+  - {fileID: 308428961}

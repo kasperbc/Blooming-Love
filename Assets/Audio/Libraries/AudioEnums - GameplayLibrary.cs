@@ -6,5 +6,6 @@
         AppleCider,
         ThatsItForToday,
         MajitaPioka,
-        PostRock
+        PostRock,
+        Friends
     }

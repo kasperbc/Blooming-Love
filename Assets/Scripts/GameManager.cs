@@ -23,8 +23,13 @@ public class GameManager : MonoBehaviour
     private string locationName;
 
     // Refrences
-    private Image characterImg;
-    private Image backgroundImg;
+    private SpriteRenderer characterImg;
+    private BackgroundFade backgroundImg;
+    private GameObject canvas;
+    private DialogueManager dialogueManager;
+    [Header("Refrences"), SerializeField]
+    private GameObject minigame;
+    private bool minigamePlayed = false;
     public float HeartPoints
     {
         get { return heartPoints; }
@@ -43,8 +48,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         // Find refrences
-        characterImg = GameObject.Find("Character").GetComponent<Image>();
-        backgroundImg = GameObject.Find("Background").GetComponent<Image>();
+        characterImg = GameObject.Find("Character").GetComponent<SpriteRenderer>();
+        backgroundImg = GameObject.Find("Background").GetComponent<BackgroundFade>();
+        canvas = GameObject.Find("Canvas");
+        dialogueManager = FindObjectOfType<DialogueManager>();
 
         // Convert sprites to dict
         foreach (SpriteNamePair s in sprites)
@@ -59,7 +66,7 @@ public class GameManager : MonoBehaviour
 
         // Set default sprite/background
         SetCharacterSprite(sprites[0].name);
-        SetBackground(backgrounds[0].name);
+        SetBackground(backgrounds[0].name, true);
     }
 
     public void SetCharacterSprite(string spriteName)
@@ -73,7 +80,7 @@ public class GameManager : MonoBehaviour
         characterImg.sprite = result;
     }
 
-    public void SetBackground(string backgroundName)
+    public void SetBackground(string backgroundName, bool instant)
     {
         if (backgroundDict.TryGetValue(backgroundName, out Sprite result) == false)
         {
@@ -81,8 +88,9 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        backgroundImg.sprite = result;
+        backgroundImg.FadeToBackground(result);
     }
+    public void SetBackground(string backgroundName) => SetBackground(backgroundName, false);
 
     private string sName;
     public void LoadScene(string sceneName)
@@ -101,6 +109,24 @@ public class GameManager : MonoBehaviour
     private void LoadSceneAfterWait()
     {
         SceneManager.LoadScene(sName);
+    }
+
+    public void PlayMinigame()
+    {
+        if (minigamePlayed) return;
+        minigamePlayed = true;
+
+        dialogueManager.CurrentState = DialogueManager.GameState.Minigame;
+        canvas.SetActive(false);
+        minigame.SetActive(true);
+    }
+
+    public void OnMinigameEnd()
+    {
+        dialogueManager.CurrentState = DialogueManager.GameState.Normal;
+        canvas.SetActive(true);
+        minigame.SetActive(false);
+        dialogueManager.ContinueStory();
     }
 
     [Serializable]

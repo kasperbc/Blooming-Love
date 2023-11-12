@@ -24,6 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b22145e691aef2a4ab89b04b1e4903d4, type: 2}
   - {fileID: 11400000, guid: 50d0d91d9ef12a34d91981fd6b7e077c, type: 2}
   - {fileID: 11400000, guid: 36bb7433356ef904a8d3b2bb3fe76578, type: 2}
+  - {fileID: 11400000, guid: b30a524405e14bf47858ebc80e42939d, type: 2}
   useCustomNames: 0
   generatedName: GameplayLibrary
   musicEnum: AudioLibraryMusic
@@ -47,4 +48,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b22145e691aef2a4ab89b04b1e4903d4, type: 2}
     - {fileID: 11400000, guid: 50d0d91d9ef12a34d91981fd6b7e077c, type: 2}
     - {fileID: 11400000, guid: 36bb7433356ef904a8d3b2bb3fe76578, type: 2}
+    - {fileID: 11400000, guid: b30a524405e14bf47858ebc80e42939d, type: 2}
     foldout: 1

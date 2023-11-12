@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSunflower.unity
     guid: d33e6bff27b6365419e6c8c97b3d35a0
+  - enabled: 1
+    path: Assets/Scenes/LevelOrchid.unity
+    guid: 89b5979274e36fd4ba63f9260af3ef28
   m_configObjects: {}

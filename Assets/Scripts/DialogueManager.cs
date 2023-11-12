@@ -24,7 +24,8 @@ public class DialogueManager : MonoBehaviour
     public enum GameState
     {
         Normal,
-        Writing
+        Writing,
+        Minigame
     }
     private GameState currentState;
     public GameState CurrentState
@@ -75,12 +76,14 @@ public class DialogueManager : MonoBehaviour
                 case GameState.Writing:
                     dialogueText.JumpDialogue();
                     break;
+                case GameState.Minigame:
+                    break;
             }
                 
         }
     }
 
-    void ContinueStory()
+    public void ContinueStory()
     {
         if (story.currentChoices.Count > 0)
         {
@@ -89,16 +92,19 @@ public class DialogueManager : MonoBehaviour
 
         if (story.canContinue)
         {
-            dialogueText.WriteDialogue(story.Continue());
+            if (story.currentTags.Count > 0)
+            {
+                HandleTags();
+            }
+
+            if (currentState != GameState.Minigame)
+            {
+                dialogueText.WriteDialogue(story.Continue());
+            }
 
             if (story.currentChoices.Count > 0)
             {
                 DisplayChoices();
-            }
-
-            if (story.currentTags.Count > 0)
-            {
-                HandleTags();
             }
         }
         else
@@ -172,6 +178,9 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case "playmusic":
                     musicPlayer.Play();
+                    break;
+                case "minigame":
+                    GameManager.Instance.PlayMinigame();
                     break;
             }
         }
