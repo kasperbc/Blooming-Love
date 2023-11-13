@@ -1,6 +1,7 @@
 using JSAM;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +35,9 @@ public class MinigameManager : MonoBehaviour
     private Image healthBar;
     private TextMeshProUGUI timer;
     private GameObject spawnerParent;
+    private GameObject endText;
+
+    private bool minigameEnding;
 
     private void Awake()
     {
@@ -55,10 +59,13 @@ public class MinigameManager : MonoBehaviour
         healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
         timer = GameObject.Find("MinigameTimer").GetComponent<TextMeshProUGUI>();
         spawnerParent = transform.Find("Spawners").gameObject;
+        endText = GameObject.Find("EndText");
+
+        endText.SetActive(false);
 
         timeSinceLastDamage = playerIFrames;
 
-        Invoke(nameof(StartMinigame), 3);
+        StartCoroutine(StartMinigame());
     }
 
     void Update()
@@ -73,9 +80,9 @@ public class MinigameManager : MonoBehaviour
         }
 
         UpdateTimer();
-        if (currentMinigameTime > minigameLength)
+        if (currentMinigameTime > minigameLength && !minigameEnding)
         {
-            EndMinigame();
+            StartCoroutine(EndMinigame());
         }
     }
 
@@ -98,16 +105,40 @@ public class MinigameManager : MonoBehaviour
         timeSinceLastDamage = 0;
     }
 
-    private void StartMinigame()
+    private IEnumerator StartMinigame()
     {
+        TextMeshProUGUI startTimer = GameObject.Find("StartTimer").GetComponent<TextMeshProUGUI>();
+
+        startTimer.text = "Starts in 3...";
+        yield return new WaitForSeconds(1);
+
+        startTimer.text = "Starts in 2...";
+        yield return new WaitForSeconds(1);
+
+        startTimer.text = "Starts in 1...";
+        yield return new WaitForSeconds(1);
+
+        startTimer.transform.parent.gameObject.SetActive(false);
+
         spawnerParent.SetActive(true);
         minigameActive = true;
     }
 
-    private void EndMinigame()
+    private IEnumerator EndMinigame()
     {
+        if (minigameEnding) yield break;
+
         spawnerParent.SetActive(false);
         minigameActive = false;
+        minigameEnding = true;
+
+        float score = PlayerHealth / playerMaxHealth;
+
+        endText.SetActive(true);
+        endText.GetComponent<TextMeshProUGUI>().text = $"Your score: {score:P0}";
+
+        yield return new WaitForSeconds(3);
+
         GameManager.Instance.OnMinigameEnd();
     }
 }
