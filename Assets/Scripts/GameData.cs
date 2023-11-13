@@ -6,7 +6,7 @@ public static class GameData
 {
     private static List<string> locationsVisited = new List<string>();
 
-    public static Dictionary<string, float> scores;
+    public static Dictionary<string, float> scores = new Dictionary<string, float>();
     public static void ClearData()
     {
         locationsVisited.Clear();

@@ -306,11 +306,112 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &267588550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 267588552}
+  - component: {fileID: 267588551}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &267588551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267588550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7241a3e106230140bd9d59ff2d17ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11400000, guid: dba0599094985ba418bba8270d285f98, type: 2}
+  listener: {fileID: 0}
+--- !u!4 &267588552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267588550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360003995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 660290172818991684, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
   m_PrefabInstance: {fileID: 970275992}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &498107337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498107339}
+  - component: {fileID: 498107338}
+  m_Layer: 0
+  m_Name: Music Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &498107338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498107337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd13adbb36a3a614fafbec256720d4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 11400000, guid: 8f831700cc959a84192eaaf05fb3388d, type: 2}
+  advancedMode: 0
+  keepPlaybackPosition: 1
+  restartOnReplay: 0
+  stopInstantly: 0
+  onStart: 1
+  onEnable: 0
+  onDisable: 0
+  onDestroy: 2
+  fadeBehaviour: 0
+  fadeTime: 0
+--- !u!4 &498107339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498107337}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 660290172818991684, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244362577423445249, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -730,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_AnchorMin.x
@@ -738,7 +839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_SizeDelta.x
@@ -778,11 +879,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -465
       objectReference: {fileID: 0}
     - target: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -816,7 +917,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 376118419922867759, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_text
-      value: The Library
+      value: Forest Library
       objectReference: {fileID: 0}
     - target: {fileID: 660290172818991684, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_Name
@@ -1005,7 +1106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 227b746667dd2664eb476117c7f1bbdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d96ca18d2d207e4791e62bf13925b9c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1101,7 +1202,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 376118419922867759, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_text
-      value: The Park
+      value: Sunshine Park
       objectReference: {fileID: 0}
     - target: {fileID: 660290172818991684, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_Name
@@ -1233,11 +1334,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8962732410669393567, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
   m_PrefabInstance: {fileID: 1309308575}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1312575082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 660290172818991684, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
-  m_PrefabInstance: {fileID: 908461427}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1577709413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,8 +1370,6 @@ MonoBehaviour:
     name: Library
   - locationButton: {fileID: 120661390}
     name: Path
-  - locationButton: {fileID: 1312575082}
-    name: Cafe
   - locationButton: {fileID: 1991653757}
     name: Pond
 --- !u!4 &1577709415
@@ -1582,7 +1676,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 376118419922867759, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_text
-      value: The Forest Path
+      value: Forest Path
       objectReference: {fileID: 0}
     - target: {fileID: 660290172818991684, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_Name
@@ -1729,7 +1823,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 376118419922867759, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_text
-      value: The Pond
+      value: Peony Pond
       objectReference: {fileID: 0}
     - target: {fileID: 660290172818991684, guid: 743dff936f763ba4c9aa3c0f31e8bf45, type: 3}
       propertyPath: m_Name
@@ -1866,3 +1960,5 @@ SceneRoots:
   - {fileID: 241025948}
   - {fileID: 1216479155}
   - {fileID: 1577709415}
+  - {fileID: 267588552}
+  - {fileID: 498107339}

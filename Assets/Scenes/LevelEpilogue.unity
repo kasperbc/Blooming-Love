@@ -375,7 +375,19 @@ MonoBehaviour:
   inkJson: {fileID: 4900000, guid: e002439d47b9bb743a40cbaa8462f2d4, type: 3}
   endOfStoryBehaviour:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1081669544}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: EndScreen
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1081669543
 Transform:
   m_ObjectHideFlags: 0
@@ -409,8 +421,8 @@ MonoBehaviour:
   - name: sad
     sprite: {fileID: 21300000, guid: bbfe25921660de148be79e8318fa1008, type: 3}
   backgrounds:
-  - name: grass
-    sprite: {fileID: 21300000, guid: f917ca68b53ffdd4699fdb7bac7a1834, type: 3}
+  - name: home
+    sprite: {fileID: 21300000, guid: 4e4c20b427cb74f4eb371231f147c295, type: 3}
   - name: space
     sprite: {fileID: 21300000, guid: 73cb823b8d1db054aa2b4428c7972d0f, type: 3}
   locationName: Epilogue
@@ -558,12 +570,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd13adbb36a3a614fafbec256720d4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 8f831700cc959a84192eaaf05fb3388d, type: 2}
+  audio: {fileID: 11400000, guid: 5e5b7dbe8f2218a48bd486cf71673265, type: 2}
   advancedMode: 0
   keepPlaybackPosition: 1
   restartOnReplay: 0
   stopInstantly: 0
-  onStart: 0
+  onStart: 1
   onEnable: 0
   onDisable: 0
   onDestroy: 2
@@ -761,10 +773,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6846765700056457061, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7690583
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846765700056457061, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e4c20b427cb74f4eb371231f147c295, type: 3}
+    - target: {fileID: 6846765700056457061, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6962620434615712657, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
       propertyPath: m_Name
       value: SCENE OBJECTS
       objectReference: {fileID: 0}
+    - target: {fileID: 7493073604485828248, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acacc4b80c5c7b04bb78f51a225ac89e, type: 3}
     - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

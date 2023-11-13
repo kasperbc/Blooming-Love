@@ -1,3 +1,4 @@
+using JSAM;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
     [Header("Refrences"), SerializeField]
     private GameObject minigame;
     private bool minigamePlayed = false;
+    private MusicPlayer gameplayMusic;
+
     public float HeartPoints
     {
         get { return heartPoints; }
@@ -67,6 +70,8 @@ public class GameManager : MonoBehaviour
         // Set default sprite/background
         SetCharacterSprite(sprites[0].name);
         SetBackground(backgrounds[0].name, true);
+
+        gameplayMusic = GameObject.Find("Music Player").GetComponent<MusicPlayer>();
     }
 
     public void SetCharacterSprite(string spriteName)
@@ -117,6 +122,7 @@ public class GameManager : MonoBehaviour
     {
         if (minigamePlayed) return;
         minigamePlayed = true;
+        gameplayMusic.Stop();
 
         dialogueManager.CurrentState = DialogueManager.GameState.Minigame;
         canvas.SetActive(false);
@@ -128,8 +134,9 @@ public class GameManager : MonoBehaviour
         dialogueManager.CurrentState = DialogueManager.GameState.Normal;
         canvas.SetActive(true);
         minigame.SetActive(false);
+        gameplayMusic.Play();
 
-        heartPoints *= score + 0.5f;
+        heartPoints *= score + 1f;
 
         dialogueManager.ContinueStory();
     }

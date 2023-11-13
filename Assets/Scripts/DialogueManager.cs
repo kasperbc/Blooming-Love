@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         dialogueText = GameObject.Find("DialogueText").GetComponent<DialogueTextWriter>();
         speakerText = GameObject.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
-        musicPlayer = FindObjectOfType<MusicPlayer>();
+        musicPlayer = GameObject.Find("Music Player").GetComponent<MusicPlayer>();
 
         // Choice refrences
         Transform dialogueChoicesParent = GameObject.Find("DialogueChoices").transform;
@@ -131,7 +131,16 @@ public class DialogueManager : MonoBehaviour
 
             choices[i].SetActive(true);
             choices[i].GetComponent<Button>().onClick.AddListener(new UnityAction(() => MakeChoice(x)));
-            choiceTexts[i].text = c.text;
+            choiceTexts[i].text = c.text.Replace("_", "");
+
+            if (c.text[0] == '_')
+            {
+                choices[i].GetComponent<Image>().color = new Color(0.4811321f, 0.1883677f, 0.281041f);
+            }
+            else
+            {
+                choices[i].GetComponent<Image>().color = new Color(0.2117647f, 0.2117647f, 0.2117647f);
+            }
         }
     }
 

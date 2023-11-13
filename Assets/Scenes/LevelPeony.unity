@@ -357,7 +357,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1054441129071614939, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093441743866461698, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6962620434615712657, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
       propertyPath: m_Name
@@ -366,7 +370,7 @@ PrefabInstance:
     - target: {fileID: 7493073604485828248, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 06cd0e886967a794ba951174bc3c396c, type: 3}
+      objectReference: {fileID: 21300000, guid: 1e1216d65c392c147b7e260802c67731, type: 3}
     - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -497,7 +501,9 @@ MonoBehaviour:
   - name: invisible
     sprite: {fileID: 21300000, guid: acacc4b80c5c7b04bb78f51a225ac89e, type: 3}
   - name: neutral
-    sprite: {fileID: 21300000, guid: 06cd0e886967a794ba951174bc3c396c, type: 3}
+    sprite: {fileID: 21300000, guid: 1e1216d65c392c147b7e260802c67731, type: 3}
+  - name: wink
+    sprite: {fileID: 21300000, guid: 0e2db572352282440aebb2a77b49a861, type: 3}
   backgrounds:
   - name: pond
     sprite: {fileID: 21300000, guid: 100fcdfe5be89bd419f4246f599c7c74, type: 3}
@@ -653,12 +659,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd13adbb36a3a614fafbec256720d4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: b22145e691aef2a4ab89b04b1e4903d4, type: 2}
+  audio: {fileID: 11400000, guid: 553c478e5bba39d43bff5a68cd1deec4, type: 2}
   advancedMode: 0
   keepPlaybackPosition: 1
   restartOnReplay: 0
   stopInstantly: 0
-  onStart: 0
+  onStart: 1
   onEnable: 0
   onDisable: 0
   onDestroy: 2

@@ -1,4 +1,7 @@
     public enum GameplayLibrarySounds {
+        Click,
+        Heart,
+        Hurt
     }
     public enum GameplayLibraryMusic {
         CutiePie,
@@ -7,5 +10,8 @@
         ThatsItForToday,
         MajitaPioka,
         PostRock,
-        Friends
+        Friends,
+        HappyBackgroundMusic,
+        HotSpringTown,
+        VillageOrchestra
     }

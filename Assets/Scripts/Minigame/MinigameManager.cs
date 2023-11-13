@@ -103,11 +103,13 @@ public class MinigameManager : MonoBehaviour
 
         PlayerHealth--;
         timeSinceLastDamage = 0;
+        AudioManager.PlaySound(GameplayLibrarySounds.Hurt);
     }
 
     public void HealPlayer()
     {
         PlayerHealth++;
+        AudioManager.PlaySound(GameplayLibrarySounds.Heart);
     }
 
     private IEnumerator StartMinigame()
@@ -141,6 +143,7 @@ public class MinigameManager : MonoBehaviour
 
         endText.SetActive(true);
         endText.GetComponent<TextMeshProUGUI>().text = $"Your score: {score:P0}";
+        //transform.Find("Minigame Music Player").gameObject.SetActive(false);
 
         yield return new WaitForSeconds(3);
 

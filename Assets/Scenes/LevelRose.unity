@@ -419,7 +419,9 @@ MonoBehaviour:
   - name: invisible
     sprite: {fileID: 21300000, guid: acacc4b80c5c7b04bb78f51a225ac89e, type: 3}
   - name: neutral
-    sprite: {fileID: 21300000, guid: 9eee9f23c7674e3448ac2e6b2822c88b, type: 3}
+    sprite: {fileID: 21300000, guid: cee1f2a5ce0b5c94f8178504d0258f9b, type: 3}
+  - name: angy
+    sprite: {fileID: 21300000, guid: 609c8832e6d93af4ba734c7f0d672b8d, type: 3}
   backgrounds:
   - name: path
     sprite: {fileID: 21300000, guid: f079d29efe823d646b4e9cd685410eae, type: 3}
@@ -645,7 +647,7 @@ MonoBehaviour:
   keepPlaybackPosition: 1
   restartOnReplay: 0
   stopInstantly: 0
-  onStart: 0
+  onStart: 1
   onEnable: 0
   onDisable: 0
   onDestroy: 2
@@ -855,6 +857,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SCENE OBJECTS
       objectReference: {fileID: 0}
+    - target: {fileID: 7493073604485828248, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cee1f2a5ce0b5c94f8178504d0258f9b, type: 3}
     - target: {fileID: 8865981380758785089, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
