@@ -9,6 +9,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void BeginGame()
     {
+        GameData.ClearData();
+
         SceneManager.LoadScene(firstScene);
     }
 

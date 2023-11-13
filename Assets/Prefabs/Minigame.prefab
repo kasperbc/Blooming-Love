@@ -164,7 +164,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6971811260368564997}
   m_Father: {fileID: 7436380887656874647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1840483547454889593
@@ -424,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a467aaed625c14e8f8dc3d66f889b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMaxHealth: 10
+  playerMaxHealth: 20
   playerIFrames: 1
   minigameLength: 30
 --- !u!1 &4954915042433576059
@@ -4987,3 +4988,53 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &8991367135217918767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6971811260368564997}
+  - component: {fileID: 8425038434658814137}
+  m_Layer: 0
+  m_Name: HeartSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6971811260368564997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8991367135217918767}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4258022207019623285}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8425038434658814137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8991367135217918767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a7de1628791bd4792ca47a5ac3df68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 8568671257297582898, guid: 9fe63336682e73b45b6084012f9b8a3a, type: 3}
+  baseRateOfFire: 2.5
+  minRateOfFire: 2.5
+  rateOfFireRedPerShot: 0
+  timingOffset: 0
+  spawnArea: {x: 4, y: 3}

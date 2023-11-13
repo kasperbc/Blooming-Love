@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 2820874114260575703, guid: b01e5cf954b2a93448da046c1b50d976, type: 3}
-  shootTimeAfterEnable: 1
+  shootTimeAfterEnable: 0
 --- !u!95 &5265213422649564577
 Animator:
   serializedVersion: 5

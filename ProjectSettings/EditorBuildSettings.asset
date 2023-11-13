@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LocationSelect.unity
     guid: 9f8ea6cec07ec894f9fa1700e03842c2
   - enabled: 1
+    path: Assets/Scenes/LevelIntro.unity
+    guid: bc59ed2591d86a64491cd3d3ff95c1b8
+  - enabled: 1
     path: Assets/Scenes/LevelLily.unity
     guid: 3038c6a666bafc84ab5fb636b2a7663c
   - enabled: 1
@@ -23,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelOrchid.unity
     guid: 89b5979274e36fd4ba63f9260af3ef28
+  - enabled: 1
+    path: Assets/Scenes/LevelNettle.unity
+    guid: f291e2795abbef846afe674756b8c943
+  - enabled: 1
+    path: Assets/Scenes/LevelRose.unity
+    guid: 16eac20e69dea74449a1f47529692d65
+  - enabled: 1
+    path: Assets/Scenes/LevelEpilogue.unity
+    guid: 35db79355c78ab749b77f1bbacd5651c
   m_configObjects: {}

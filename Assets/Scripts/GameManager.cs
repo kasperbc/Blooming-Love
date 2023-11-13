@@ -95,6 +95,8 @@ public class GameManager : MonoBehaviour
     private string sName;
     public void LoadScene(string sceneName)
     {
+        GameData.scores.Add(locationName, heartPoints);
+
         UIFade fader = FindObjectOfType<UIFade>();
         if (fader != null)
         {
@@ -121,11 +123,14 @@ public class GameManager : MonoBehaviour
         minigame.SetActive(true);
     }
 
-    public void OnMinigameEnd()
+    public void OnMinigameEnd(float score)
     {
         dialogueManager.CurrentState = DialogueManager.GameState.Normal;
         canvas.SetActive(true);
         minigame.SetActive(false);
+
+        heartPoints *= score + 0.5f;
+
         dialogueManager.ContinueStory();
     }
 

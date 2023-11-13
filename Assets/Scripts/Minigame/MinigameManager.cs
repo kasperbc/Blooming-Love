@@ -10,8 +10,8 @@ public class MinigameManager : MonoBehaviour
 {
     public static MinigameManager instance;
 
-    private float playerHealth;
-    public float PlayerHealth
+    private int playerHealth;
+    public int PlayerHealth
     {
         get => playerHealth;
         set
@@ -21,7 +21,7 @@ public class MinigameManager : MonoBehaviour
     }
 
     [SerializeField, Header("Player Health")]
-    private float playerMaxHealth = 10;
+    private int playerMaxHealth = 20;
     [SerializeField]
     public float playerIFrames = 1f;
     public float timeSinceLastDamage { get; private set; }
@@ -54,7 +54,7 @@ public class MinigameManager : MonoBehaviour
 
     void Start()
     {
-        playerHealth = playerMaxHealth;
+        playerHealth = playerMaxHealth / 2;
 
         healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
         timer = GameObject.Find("MinigameTimer").GetComponent<TextMeshProUGUI>();
@@ -70,7 +70,7 @@ public class MinigameManager : MonoBehaviour
 
     void Update()
     {
-        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, PlayerHealth / playerMaxHealth, 0.015f);
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)PlayerHealth / playerMaxHealth, 0.015f);
 
         timeSinceLastDamage += Time.deltaTime;
         
@@ -105,6 +105,11 @@ public class MinigameManager : MonoBehaviour
         timeSinceLastDamage = 0;
     }
 
+    public void HealPlayer()
+    {
+        PlayerHealth++;
+    }
+
     private IEnumerator StartMinigame()
     {
         TextMeshProUGUI startTimer = GameObject.Find("StartTimer").GetComponent<TextMeshProUGUI>();
@@ -132,13 +137,13 @@ public class MinigameManager : MonoBehaviour
         minigameActive = false;
         minigameEnding = true;
 
-        float score = PlayerHealth / playerMaxHealth;
+        float score = (float)PlayerHealth / playerMaxHealth;
 
         endText.SetActive(true);
         endText.GetComponent<TextMeshProUGUI>().text = $"Your score: {score:P0}";
 
         yield return new WaitForSeconds(3);
 
-        GameManager.Instance.OnMinigameEnd();
+        GameManager.Instance.OnMinigameEnd(score);
     }
 }

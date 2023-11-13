@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RepeatingProjectileShooter : ProjectileShooter
 {
+    [SerializeField, Header("Rate of fire"), FormerlySerializedAs("rateOfFire")]
+    protected float baseRateOfFire = 1f;
     [SerializeField]
-    protected float rateOfFire = 1f;
+    protected float minRateOfFire = 1f;
+    [SerializeField]
+    protected float rateOfFireRedPerShot = 0.05f;
     [SerializeField]
     protected float timingOffset;
+    protected float currentRateOfFire;
 
     protected float timeSinceLastFire;
     protected bool firing;
@@ -15,6 +21,7 @@ public class RepeatingProjectileShooter : ProjectileShooter
     protected virtual void Start()
     {
         firing = false;
+        currentRateOfFire = baseRateOfFire;
         Invoke(nameof(EnableFire), timingOffset);
     }
 
@@ -29,7 +36,7 @@ public class RepeatingProjectileShooter : ProjectileShooter
 
         timeSinceLastFire += Time.deltaTime;
 
-        if (timeSinceLastFire >= rateOfFire)
+        if (timeSinceLastFire >= currentRateOfFire)
         {
             ShootProjectile();
         }
@@ -38,6 +45,13 @@ public class RepeatingProjectileShooter : ProjectileShooter
     protected override void ShootProjectile()
     {
         timeSinceLastFire = 0;
+        ReduceRateOfFire();
         base.ShootProjectile();
+    }
+
+    protected void ReduceRateOfFire()
+    {
+        currentRateOfFire -= rateOfFireRedPerShot;
+        currentRateOfFire = Mathf.Clamp(currentRateOfFire, minRateOfFire, baseRateOfFire);
     }
 }

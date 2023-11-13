@@ -47,6 +47,7 @@ public class BoundaryProjectileShooter : RepeatingProjectileShooter
     {
         timeSinceLastFire = 0;
         GameObject p = Instantiate(projectile, GetProjectileSpawnPosition(), Quaternion.identity);
+        ReduceRateOfFire();
 
         if (p.GetComponent<Projectile>() is MoveFromBoundaryProjectile)
         {

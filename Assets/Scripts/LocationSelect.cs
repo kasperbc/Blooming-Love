@@ -13,12 +13,22 @@ public class LocationSelect : MonoBehaviour
 
     void Start()
     {
+        bool everyLocationVisited = true;
         foreach (LocationData l in locations)
         {
             if (GameData.HasBeenVisited(l.name))
             {
                 l.locationButton.SetActive(false);
             }
+            else
+            {
+                everyLocationVisited = false;
+            }
+        }
+
+        if (everyLocationVisited)
+        {
+            SceneManager.LoadScene("LevelOrchid");
         }
     }
 

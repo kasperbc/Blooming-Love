@@ -13,13 +13,19 @@ public class NettleProjectile : Projectile
     private float sidewaysMovementIntensity = 1;
     [SerializeField]
     private float sidewaysMovementSpeed = 1;
+    [SerializeField]
+    private float sideMoveRotationIntensity = 20f;
     private bool reverseSideMovement;
 
     private float movementTime;
 
+    private Transform spriteObj;
+
     protected override void Start()
     {
         reverseSideMovement = Random.value > 0.5f;
+
+        spriteObj = transform.GetChild(0);
 
         base.Start();
     }
@@ -32,6 +38,9 @@ public class NettleProjectile : Projectile
         rb.velocity = new(
             sidewaysMovementCurve.Evaluate(movementTime * sidewaysMovementSpeed) * sidewaysMovementIntensity * reverseMovementMultiplier, 
             -fallSpeed);
+
+        spriteObj.rotation = Quaternion.Euler(0, 0, 
+            sidewaysMovementCurve.Evaluate(movementTime * sidewaysMovementSpeed) * sideMoveRotationIntensity * -reverseMovementMultiplier);
 
         movementTime += Time.deltaTime;
     }

@@ -1,4 +1,4 @@
-As you get closer to the sun-kissed beach stretching before you, the golden sand blends seamlessly with the surrounding greenery.
+As you get closer to the sun-kissed beach stretching before you, the golden sand blends seamlessly with the surrounding greenery. # minigame
 The rhythmic sound of waves calmly crashing against the shore provides a smoothing background, while a gentle breeze carries the sweet aroma of the blooming flowers.
 The whole beach looks warm and cozy for both pollinators and flowerkin alike, to enjoy the sun and sea breeze.
 Nestled under the shade of a large tree, you notice a picnic table and a blanket filled with the most delicious-looking treats.

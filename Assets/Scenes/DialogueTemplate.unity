@@ -414,6 +414,7 @@ MonoBehaviour:
   - name: space
     sprite: {fileID: 21300000, guid: 73cb823b8d1db054aa2b4428c7972d0f, type: 3}
   locationName: 
+  minigame: {fileID: 8001596915881511446}
 --- !u!1 &1480445867
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +810,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+--- !u!1 &8001596915881511446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1054441129071614939, guid: fcc33cc3d68dc1142afe97948b1ebf1c, type: 3}
+  m_PrefabInstance: {fileID: 8001596915881511445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
